@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정월대보름 정보 카드</title>
+    <style>
+        /* 기본 스타일 설정 */
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: #1a1f2b;
+            --primary-gold: #f1c40f;
+            --text-light: #ecf0f1;
+            --text-muted: #bdc3c7;
+            --accent: #e67e22;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 배경 보름달 효과 */
+        .moon-bg {
+            position: fixed;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(241, 196, 15, 0.2) 0%, rgba(241, 196, 15, 0) 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn Down 0.8s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: var(--primary-gold);
+            text-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* 카드 컨테이너 */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        /* 개별 카드 스타일 */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(241, 196, 15, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: var(--primary-gold);
+            border-bottom: 2px solid rgba(241, 196, 15, 0.2);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .card li strong {
+            display: block;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .card li span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* 푸터 메시지 */
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        .wish-box {
+            background: linear-gradient(135deg, #2c3e50, #000);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: inset 0 0 10px rgba(241, 196, 15, 0.1);
+        }
+
+        /* 애니메이션 */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="moon-bg"></div>
+
+    <header>
+        <p>음력 1월 15일</p>
+        <h1>정월대보름</h1>
+        <p>가장 크고 밝은 보름달과 함께하는 한 해의 시작</p>
+    </header>
+
+    <main class="card-container">
+        <!-- 의미 카드 -->
+        <article class="card">
+            <span class="card-icon">🌕</span>
+            <h2>대보름의 의미</h2>
+            <ul>
+                <li>
+                    <strong>풍요의 상징</strong>
+                    <span>새해 들어 처음으로 맞이하는 보름달은 어둠을 몰아내는 빛과 풍요를 상징합니다.</span>
+                </li>
+                <li>
+                    <strong>안녕과 기원</strong>
+                    <span>한 해 동안의 질병과 액운을 막고 마을의 안녕과 농사의 풍년을 기원하는 날입니다.</span>
+                </li>
+            </ul>
+        </article>
+
+        <!-- 음식 카드 -->
+        <article class="card">
+            <span class="card-icon">🍚</span>
+            <h2>전통 음식</h2>
+            <ul>
+                <li>
+                    <strong>오곡밥 & 나물</strong>
+                    <span>다섯 가지 곡식으로 지은 밥과 아홉 가지 묵은 나물을 먹으며 영양을 보충합니다.</span>
+                </li>
+                <li>
+                    <strong>부럼 깨기</strong>
+                    <span>잣, 밤, 호두 등 견과류를 깨물며 한 해 동안 부스럼이 생기지 않길 기원합니다.</span>
+                </li>
+                <li>
+                    <strong>귀밝이술</strong>
+                    <span>아침에 데우지 않은 술을 마시면 귀가 밝아지고 좋은 소식만 듣게 된다고 믿었습니다.</span>
+                </li>
+            </ul>
+        </article>
+
+        <!-- 풍습 카드 -->
+        <article class="card">
+            <span class="card-icon">🔥</span>
+            <h2>전통 풍습</h2>
+            <ul>
+                <li>
+                    <strong>쥐불놀이 & 달집태우기</strong>
+                    <span>논밭의 잡초를 태워 해충을 없애고, 달집을 태우며 액운을 날려 보냅니다.</span>
+                </li>
+                <li>
+                    <strong>더위팔기</strong>
+                    <span>"내 더위 사가라!"라고 외치며 다가올 여름의 무더위를 미리 방지하는 재미있는 풍습입니다.</span>
+                </li>
+                <li>
+                    <strong>달맞이</strong>
+                    <span>높은 곳에 올라가 보름달을 먼저 보는 사람이 더 큰 복을 받는다고 여겼습니다.</span>
+                </li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+        <div class="wish-box">
+            <p>보름달처럼 밝고 넉넉한 한 해 되시길 기원합니다.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
